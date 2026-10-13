@@ -1,7 +1,15 @@
 # Missão Tiradentes
 
-Preparatório independente para ingresso nos Colégios Tiradentes da Brigada Militar do RS.
+Preparatório independente hospedado em https://rodrigomaysonnave.github.io/missao-tiradentes/.
 
-Site estático no GitHub Pages. Cadastro, aprovação, questões e progresso ficam no Supabase. O navegador recebe somente uma chave pública; o conteúdo e os gabaritos são protegidos por permissões no banco.
+Frontend estático. Cadastro, aprovação, questões, correção e histórico são protegidos pelo Supabase. Este repositório contém apenas os arquivos públicos; não publique os PDFs originais, gabaritos, dados de alunos ou credenciais privadas.
 
-O site funciona sem conta ChatGPT. Publicação pela branch main, diretório raiz, em Settings → Pages. Arquivos de provas e respostas não fazem parte deste repositório.
+## Aprendizagem
+
+O diagnóstico concluído aparece como tal nos simulados. Os treinos de matemática geram novas questões no servidor, com 27 modelos em 13 habilidades; números, resultados e alternativas variam. Cada resultado fica reservado por aluno e habilidade, incluindo exercícios antigos, para impedir repetição. As dificuldades recentes orientam o padrão da revisão. O diagnóstico e as aulas não repetem exercícios fixos de Português já concluídos. Quando o banco inédito se esgota, a interface informa isso; nunca recicla silenciosamente uma questão. Cada prova histórica aceita uma tentativa, com consulta posterior à correção. A estratégia combina dificuldades, revisão de acertos e habilidades ainda não avaliadas, com sessões nos dias escolhidos pelo aluno. As metas são versionadas; alterações começam na próxima semana. Tempo ativo registrado e frequência são indicadores separados.
+
+## Relatórios
+
+O acompanhamento corrente é visível no curso, sem download. Somente relatórios semanais com status `sent` e `sent_at` preenchido são acessíveis e podem ser baixados. A autorização do responsável deve estar vinculada ao e-mail confirmado da conta. O agendamento no backend inicia o envio semanal às segundas-feiras, às 08:00 de São Paulo, com retomada diária de falhas confirmadas. O envio efetivo depende de SMTP_USER e SMTP_PASSWORD configurados como segredos da função weekly-reports. A senha de aplicativo do Gmail é inserida diretamente no Supabase, sem passar pelo site ou pelo repositório. Não marque relatórios como enviados sem confirmação do serviço.
+
+Configuração pública em `config.js`: URL e chave publicável. Nunca usar chaves secretas ou de serviço no frontend.
