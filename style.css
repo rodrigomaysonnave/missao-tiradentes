@@ -111,3 +111,6 @@
 .ficha{width:100%;border-collapse:collapse;font-size:15px}.ficha th{text-align:left;color:var(--muted);font-weight:600;padding:6px 12px 6px 0;width:42%}.ficha td{padding:6px 0}.ficha tr{border-bottom:1px solid var(--line)}.ficha .ficha-sec{font:800 16px Manrope;color:var(--green);padding:14px 0 6px}
 @media(max-width:640px){.grid2{grid-template-columns:1fr}}
 #modal .steps{gap:4px}#modal .steps li{font-size:12.5px;padding:4px 9px 4px 4px}#modal .steps li span{width:20px;height:20px;font-size:12px}
+.enroll label small{font-weight:500;color:var(--muted)}
+.enroll .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}.enroll .actions .btn{flex:1;justify-content:center;min-width:140px}
+.enroll .check{margin:4px 0 14px}
