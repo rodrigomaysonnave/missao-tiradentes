@@ -149,7 +149,7 @@ window.AdminPanel = (() => {
         <h3>Responsável</h3>
         <p>${r.guardian_name ? `<b>${esc(r.guardian_name)}</b> (${esc(r.guardian_relation || '')})<br>` : 'Ficha ainda não preenchida.<br>'}${esc(r.email)} ${r.email_confirmed ? '· e-mail confirmado' : '· <b class="adm-warn-text">e-mail não confirmado</b>'}<br>
           Último acesso: ${esc(ago(r.last_sign_in_at))} · Relatório semanal: ${r.reports_active ? 'ligado' : 'desligado'}<br>
-          ${wa(r.guardian_phone, firstName ? `Olá, ${firstName}! Aqui é da Missão Tiradentes.` : '')}</p>
+          ${wa(r.guardian_phone, firstName ? `Olá, ${firstName}! Aqui é do Missão Tiradentes.` : '')}</p>
         <h3>Plano de estudo</h3>
         <p>${plan ? `${plan.minutes} min por dia, ${plan.days.length} dias por semana, às ${String(plan.time).slice(0, 5)} (desde ${dt(plan.start_day)})` : 'Sem plano definido.'}${d.plans.length > 1 ? `<br><small>${d.plans.length - 1} alteração(ões) anteriores.</small>` : ''}</p>
         ${weeks.length ? `<h3>Minutos por semana (meta x feito)</h3>${bars(weeks.map(w => dt(w.week).slice(0, 5)), [{ label: 'Meta', values: weeks.map(w => w.target || 0), cls: 's2' }, { label: 'Estudado', values: weeks.map(w => w.minutes), cls: 's1' }], { height: 120 })}` : ''}
@@ -227,7 +227,7 @@ window.AdminPanel = (() => {
         </tbody></table></div>` : '<div class="empty">Nenhuma venda registrada ainda. As vendas aparecem aqui assim que a Hotmart envia o aviso.</div>'}
         <p class="muted adm-foot">Valores conforme os avisos da Hotmart: bruto é o que o comprador pagou; líquido é a sua comissão de produtor, já sem as taxas. Datas de saque e antecipação seguem as regras da Hotmart.</p>
       </section>
-      ${f.abandoned.length ? `<section class="panel spaced"><h3>Carrinhos abandonados (60 dias)</h3><ul class="adm-list">${f.abandoned.map(a => `<li><span>${dtt(a.at)}</span><b>${esc(a.name || '')}</b> ${esc(a.email || '')} ${wa(String(a.phone || '').replace(/\D/g, '').replace(/^55(?=\d{10,11}$)/, ''), 'Olá! Vi que você se interessou pela Missão Tiradentes. Posso ajudar com alguma dúvida?')}</li>`).join('')}</ul></section>` : ''}`;
+      ${f.abandoned.length ? `<section class="panel spaced"><h3>Carrinhos abandonados (60 dias)</h3><ul class="adm-list">${f.abandoned.map(a => `<li><span>${dtt(a.at)}</span><b>${esc(a.name || '')}</b> ${esc(a.email || '')} ${wa(String(a.phone || '').replace(/\D/g, '').replace(/^55(?=\d{10,11}$)/, ''), 'Olá! Vi que você se interessou pelo Missão Tiradentes. Posso ajudar com alguma dúvida?')}</li>`).join('')}</ul></section>` : ''}`;
   }
 
   async function linkPayment(tx) {
